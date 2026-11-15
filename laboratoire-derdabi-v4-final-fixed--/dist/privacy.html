@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politique de Confidentialité | Laboratoire Derdabi Tétouan</title>
+  <meta name="description" content="Politique de protection des données personnelles et de santé du Laboratoire Derdabi à Tétouan, en stricte conformité avec la loi marocaine 09-08 et la CNDP.">
+  <link rel="canonical" href="https://laboratoirederdabi.ma/privacy.html">
+  <link rel="alternate" hreflang="fr" href="https://laboratoirederdabi.ma/privacy.html?lang=fr">
+  <link rel="alternate" hreflang="ar" href="https://laboratoirederdabi.ma/privacy.html?lang=ar">
+  <link rel="alternate" hreflang="x-default" href="https://laboratoirederdabi.ma/privacy.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png">
+
+  <script>
+    // Langue appliquée avant le chargement des styles (évite le flash LTR/RTL)
+    (function() {
+      var lang = 'fr';
+      try {
+        var l = new URLSearchParams(window.location.search).get('lang');
+        if (l === 'ar' || l === 'fr') lang = l;
+        else lang = localStorage.getItem('lab_derdabi_lang') || 'fr';
+      } catch (e) {}
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    })();
+  </script>
+
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    (function() {
+      const saved = localStorage.getItem('lab_derdabi_theme');
+      const pref = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', saved || pref);
+    })();
+  </script>
+</head>
+<body class="privacy-page">
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <a href="index.html" class="btn btn-secondary btn-sm">
+          <span class="icon-arrow-flip" aria-hidden="true">&larr;</span>
+          <span data-i18n="backToHome">Retour au site</span>
+        </a>
+      </div>
+      <div class="top-bar-right">
+        <button type="button" class="ctrl-pill-btn lang-switcher-btn" data-i18n-aria="ariaLangToggle">
+          <span data-i18n="langToggle">العربية</span>
+        </button>
+        <button type="button" class="ctrl-pill-btn" id="theme-toggle-btn" data-i18n-aria="ariaThemeToggle" aria-pressed="false">
+          <span id="theme-toggle-text" data-i18n="themeToggleDark">Mode sombre</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand brand-logo-link" aria-label="Laboratoire Derdabi - Accueil">
+        <img src="assets/logo/logo.png" alt="Laboratoire Derdabi" class="brand-logo-img brand-logo-light" width="160" height="38" data-img-fallback>
+        <img src="assets/logo/logo-white.png" alt="Laboratoire Derdabi" class="brand-logo-img brand-logo-dark" width="160" height="38" data-img-fallback>
+      </a>
+      <div class="navbar-actions">
+        <a href="index.html#contact" class="btn btn-cta-coral btn-sm">
+          <span data-i18n="btnRdv">Prendre rendez-vous</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container privacy-container">
+    <div class="privacy-card">
+      <div class="privacy-header">
+        <span class="hero-badge-dot"></span>
+        <h1 class="privacy-title" data-i18n="privacyPageTitle">Protection des Données Personnelles & Santé</h1>
+        <p class="privacy-subtitle" data-i18n="privacyPageSubtitle">Conformité à la Loi marocaine n° 09-08 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel.</p>
+        <div class="privacy-cndp-badge" data-i18n="privacyCndpNotice">Déclaration préalable CNDP : [DÉCLARATION CNDP N° D-W-XXXXXXX/2026]</div>
+      </div>
+
+      <article class="privacy-content">
+        <section class="privacy-section">
+          <h2 data-i18n="privSec1Title">1. Responsable du Traitement</h2>
+          <p data-i18n="privSec1Text">
+            Le traitement des données à caractère personnel collectées via ce site est placé sous la responsabilité du <strong>Laboratoire Derdabi</strong>, laboratoire d'analyses médicales situé Avenue des FAR, Tétouan, Maroc.
+          </p>
+        </section>
+
+        <section class="privacy-section">
+          <h2 data-i18n="privSec2Title">2. Données Collectées</h2>
+          <p data-i18n="privSec2Text">
+            Dans le cadre exclusif de la prise de rendez-vous et de la gestion de votre accueil médical, nous collectons les informations strictement nécessaires suivantes :
+          </p>
+          <ul class="privacy-list">
+            <li data-i18n="privData1">Nom et prénom complet du patient</li>
+            <li data-i18n="privData2">Numéro de téléphone marocain (pour la confirmation et le rappel SMS / WhatsApp)</li>
+            <li data-i18n="privData3">Analyses demandées ou pack préventif sélectionné</li>
+            <li data-i18n="privData4">Mode de réalisation (au laboratoire ou à domicile avec zone et adresse)</li>
+            <li data-i18n="privData5">Date et créneau horaire souhaités</li>
+            <li data-i18n="privData6">Organisme de couverture médicale (CNSS, CNOPS, AMO, mutuelle privée)</li>
+            <li data-i18n="privData7">Présence ou non d'une ordonnance médicale</li>
+          </ul>
+        </section>
+
+        <section class="privacy-section">
+          <h2 data-i18n="privSec3Title">3. Finalité du Traitement</h2>
+          <p data-i18n="privSec3Text">
+            Ces données sont traitées uniquement pour organiser votre prise en charge au laboratoire, planifier les déplacements des préleveurs à domicile et vous transmettre les recommandations pré-analytiques nécessaires (ex. respect du jeûne). Aucune donnée n'est cédée, louée ou commercialisée à des tiers.
+          </p>
+        </section>
+
+        <section class="privacy-section">
+          <h2 data-i18n="privSec4Title">4. Secret Médical & Sécurité</h2>
+          <p data-i18n="privSec4Text">
+            Toutes les informations médicales et administratives sont soumises au secret professionnel et aux règles de déontologie de la biologie médicale marocaine. Les transmissions de données bénéficient de protocoles de chiffrement conformes aux standards de sécurité sanitaire.
+          </p>
+        </section>
+
+        <section class="privacy-section">
+          <h2 data-i18n="privSec5Title">5. Durée de Conservation</h2>
+          <p data-i18n="privSec5Text">
+            Les données relatives aux demandes de rendez-vous sont conservées pendant la durée requise pour la finalisation de la prestation médicale et conformément aux délais légaux applicables aux dossiers de biologie médicale au Maroc.
+          </p>
+        </section>
+
+        <section class="privacy-section">
+          <h2 data-i18n="privSec6Title">6. Vos Droits (Loi 09-08)</h2>
+          <p data-i18n="privSec6Text">
+            Conformément à la loi n° 09-08, vous disposez d'un droit d'accès, de rectification et d'opposition pour des motifs légitimes au traitement de vos données personnelles.
+          </p>
+          <p data-i18n="privSec6Contact">
+            Pour exercer vos droits, vous pouvez vous adresser directement à la direction du laboratoire :
+          </p>
+          <div class="privacy-contact-card">
+            <div><strong data-i18n="contactAddressTitle">Adresse :</strong> <span data-i18n="contactAddressValue">Avenue des FAR, Tétouan, Maroc</span></div>
+            <div><strong data-i18n="contactPhoneTitle">Téléphone fixe :</strong> <a href="tel:+212500055505"><bdi class="bidi-isolate">05 00 05 55 05</bdi></a></div>
+            <div><strong data-i18n="contactWhatsappTitle">WhatsApp officiel :</strong> <a href="https://wa.me/212648558366" target="_blank" rel="noopener noreferrer"><bdi class="bidi-isolate">06 48 55 83 66</bdi></a></div>
+          </div>
+        </section>
+      </article>
+
+      <div class="privacy-footer-action">
+        <a href="index.html" class="btn btn-primary">
+          <span class="icon-arrow-flip" aria-hidden="true">&larr;</span>
+          <span data-i18n="backToHome">Retour à la page d'accueil</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Laboratoire Derdabi Tétouan. <span data-i18n="footerRights">Tous droits réservés.</span></div>
+      <div><span data-i18n="footerPrivacy">Protection des Données de Santé (CNDP / Loi 09-08)</span></div>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script>
+    (function() {
+      let currentLang = 'fr';
+      try {
+        const p = new URLSearchParams(window.location.search);
+        const l = p.get('lang');
+        if (l === 'ar' || l === 'fr') currentLang = l;
+        else currentLang = localStorage.getItem('lab_derdabi_lang') || 'fr';
+      } catch (e) {
+        currentLang = 'fr';
+      }
+
+      const themeBtn = document.getElementById('theme-toggle-btn');
+      const themeText = document.getElementById('theme-toggle-text');
+
+      function apply(lang) {
+        currentLang = lang;
+        localStorage.setItem('lab_derdabi_lang', lang);
+        try {
+          const u = new URL(window.location.href);
+          if (u.searchParams.get('lang') !== lang) {
+            u.searchParams.set('lang', lang);
+            window.history.replaceState({}, '', u.toString());
+          }
+        } catch (e) {}
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+        const dict = I18N[lang] || I18N.fr;
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const k = el.getAttribute('data-i18n');
+          if (dict && dict[k]) el.textContent = dict[k];
+        });
+        document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+          const k = el.getAttribute('data-i18n-aria');
+          if (dict && dict[k]) el.setAttribute('aria-label', dict[k]);
+        });
+        document.title = dict.privacyPageTitle + ' | ' + (lang === 'ar' ? 'مختبر دردابي تطوان' : 'Laboratoire Derdabi Tétouan');
+        updateThemeToggle();
+      }
+
+      apply(currentLang);
+
+      document.querySelectorAll('.lang-switcher-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          apply(currentLang === 'fr' ? 'ar' : 'fr');
+        });
+      });
+
+      function updateThemeToggle() {
+        if (!themeBtn) return;
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const dict = I18N[currentLang] || I18N.fr;
+        if (themeText) themeText.textContent = dict[isDark ? 'themeToggleLight' : 'themeToggleDark'];
+        themeBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      }
+
+      if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+          const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', currentTheme);
+          localStorage.setItem('lab_derdabi_theme', currentTheme);
+          updateThemeToggle();
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

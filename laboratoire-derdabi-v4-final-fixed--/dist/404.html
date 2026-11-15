@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="fr" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Introuvable (404) | Laboratoire Derdabi Tétouan</title>
+  <meta name="robots" content="noindex, follow">
+  <meta name="description" content="Erreur 404 — page introuvable sur le site du Laboratoire Derdabi, laboratoire d'analyses médicales à Tétouan.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png">
+
+  <script>
+    // Langue appliquée avant le chargement des styles (évite le flash LTR/RTL)
+    (function() {
+      var lang = 'fr';
+      try {
+        var l = new URLSearchParams(window.location.search).get('lang');
+        if (l === 'ar' || l === 'fr') lang = l;
+        else lang = localStorage.getItem('lab_derdabi_lang') || 'fr';
+      } catch (e) {}
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    })();
+  </script>
+
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    (function() {
+      const saved = localStorage.getItem('lab_derdabi_theme');
+      const pref = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', saved || pref);
+    })();
+  </script>
+</head>
+<body class="error-page">
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <a href="index.html" class="btn btn-secondary btn-sm">
+          <span class="icon-arrow-flip" aria-hidden="true">&larr;</span>
+          <span data-i18n="btnBackHome">Retourner à l'accueil</span>
+        </a>
+      </div>
+      <div class="top-bar-right">
+        <button type="button" class="ctrl-pill-btn lang-switcher-btn" data-i18n-aria="ariaLangToggle">
+          <span data-i18n="langToggle">العربية</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main class="container error-container">
+    <div class="error-card">
+      <div class="error-code-badge">404</div>
+      <h1 class="error-title" data-i18n="pageNotFoundTitle">Page Introuvable</h1>
+      <p class="error-desc" data-i18n="pageNotFoundDesc">
+        La page demandée n'existe pas ou a été déplacée. Vous pouvez revenir à la page d'accueil ou utiliser les liens ci-dessous.
+      </p>
+
+      <div class="error-links-grid">
+        <a href="index.html" class="btn btn-primary">
+          <span data-i18n="navHome">Accueil</span>
+        </a>
+        <a href="index.html#recherche" class="btn btn-secondary">
+          <span data-i18n="navSearch">Catalogue des Analyses</span>
+        </a>
+        <a href="index.html#contact" class="btn btn-cta-coral">
+          <span data-i18n="btnRdv">Prendre rendez-vous</span>
+        </a>
+        <a href="https://wa.me/212648558366" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-action">
+          <span>WhatsApp : 06 48 55 83 66</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Laboratoire Derdabi Tétouan. <span data-i18n="footerRights">Tous droits réservés.</span></div>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script>
+    (function() {
+      let currentLang = 'fr';
+      try {
+        const p = new URLSearchParams(window.location.search);
+        const l = p.get('lang');
+        if (l === 'ar' || l === 'fr') currentLang = l;
+        else currentLang = localStorage.getItem('lab_derdabi_lang') || 'fr';
+      } catch (e) {
+        currentLang = 'fr';
+      }
+
+      function apply(lang) {
+        currentLang = lang;
+        localStorage.setItem('lab_derdabi_lang', lang);
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+        const dict = I18N[lang] || I18N.fr;
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const k = el.getAttribute('data-i18n');
+          if (dict && dict[k]) el.textContent = dict[k];
+        });
+        document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+          const k = el.getAttribute('data-i18n-aria');
+          if (dict && dict[k]) el.setAttribute('aria-label', dict[k]);
+        });
+        document.title = dict.pageNotFoundTitle + ' | ' + (lang === 'ar' ? 'مختبر دردابي تطوان' : 'Laboratoire Derdabi Tétouan');
+      }
+
+      apply(currentLang);
+
+      document.querySelectorAll('.lang-switcher-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          apply(currentLang === 'fr' ? 'ar' : 'fr');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
+

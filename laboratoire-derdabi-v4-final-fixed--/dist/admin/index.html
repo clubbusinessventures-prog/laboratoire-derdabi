@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0A2540">
+  <title>Administration — Laboratoire Derdabi</title>
+  <meta name="description" content="Espace d'administration de démonstration du Laboratoire Derdabi. Données synthétiques, aucun patient réel.">
+
+  <script>
+    // Auto-correction des URL propres : /admin doit se terminer par « / »
+    // pour que admin.js/admin.css (chemins relatifs) se résolvent correctement.
+    (function () {
+      if (location.protocol !== 'file:' && !/(\/|\.html)$/.test(location.pathname)) {
+        location.replace(location.pathname + '/' + location.search + location.hash);
+      }
+    })();
+  </script>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/logo/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="../assets/fonts/fonts.css">
+
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <a class="adm-skip" href="#adm-main">Aller au contenu principal</a>
+
+  <div class="adm-app">
+    <aside class="adm-sidebar" id="adm-sidebar" aria-label="Navigation de l'administration">
+      <div class="adm-brand">
+        <img src="../assets/logo/logo-white.png" alt="Laboratoire Derdabi" width="150" height="38">
+        <span class="adm-sr-only">Laboratoire Derdabi — Espace administration</span>
+      </div>
+
+      <nav class="adm-nav" aria-label="Sections">
+        <p class="adm-nav-label">Gestion</p>
+
+        <a href="#/dashboard" data-route="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <rect x="3" y="3" width="7" height="9" rx="1.5"></rect>
+            <rect x="14" y="3" width="7" height="5" rx="1.5"></rect>
+            <rect x="14" y="12" width="7" height="9" rx="1.5"></rect>
+            <rect x="3" y="16" width="7" height="5" rx="1.5"></rect>
+          </svg>
+          <span>Tableau de bord</span>
+        </a>
+
+        <a href="#/calendar" data-route="calendar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+            <path d="M8 3v4M16 3v4M3 10h18"></path>
+            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path>
+          </svg>
+          <span>Calendrier</span>
+        </a>
+
+        <a href="#/appointments" data-route="appointments">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M8 6h13M8 12h13M8 18h13"></path>
+            <path d="M3 6h.01M3 12h.01M3 18h.01"></path>
+          </svg>
+          <span>Rendez-vous</span>
+        </a>
+
+        <a href="#/patients" data-route="patients">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+          </svg>
+          <span>Patients</span>
+        </a>
+
+        <a href="#/results" data-route="results">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"></path>
+            <path d="M14 2v6h6M8 13h8M8 17h5"></path>
+          </svg>
+          <span>Résultats</span>
+        </a>
+
+        <a href="#/analyses" data-route="analyses">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"></path>
+            <path d="M8.5 14h7"></path>
+          </svg>
+          <span>Analyses &amp; tarifs</span>
+        </a>
+
+        <a href="#/messages" data-route="messages">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path>
+          </svg>
+          <span>Messages</span>
+        </a>
+
+        <a href="#/statistics" data-route="statistics">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path>
+          </svg>
+          <span>Statistiques</span>
+        </a>
+
+        <p class="adm-nav-label">Système</p>
+
+        <a href="#/settings" data-route="settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4v-.2a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.6v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z"></path>
+          </svg>
+          <span>Paramètres</span>
+        </a>
+
+        <a href="#/audit" data-route="audit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
+            <path d="m9 12 2 2 4-4"></path>
+          </svg>
+          <span>Journal d’audit</span>
+        </a>
+
+        <a href="#/backup" data-route="backup">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+            <path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"></path>
+          </svg>
+          <span>Sauvegarde</span>
+        </a>
+      </nav>
+
+      <div class="adm-sidebar-foot">
+        <span class="adm-demo-pill">Mode démonstration locale</span>
+        <p>Données fictives persistées dans ce navigateur. Aucun patient réel, aucune donnée envoyée sur Internet.</p>
+        <a href="../index.html">&larr; Retour au site public</a>
+      </div>
+    </aside>
+
+    <div class="adm-backdrop" id="adm-backdrop" data-action="close-sidebar" hidden></div>
+
+    <div class="adm-main-wrap">
+      <header class="adm-topbar">
+        <button class="adm-icon-btn adm-menu-btn" type="button" data-action="toggle-sidebar" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="adm-sidebar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+
+        <div class="adm-page-head">
+          <h1 id="adm-page-title">Tableau de bord</h1>
+          <p id="adm-page-subtitle">Vue d'ensemble de l'activité du laboratoire</p>
+        </div>
+
+        <div class="adm-topbar-right">
+          <span class="adm-today" id="adm-today-date">—</span>
+          <span class="adm-demo-badge">Démo locale</span>
+
+          <div class="adm-topbar-menu" id="adm-bell-wrap">
+            <button type="button" class="adm-icon-btn adm-bell-btn" id="adm-bell-btn" data-action="toggle-bell" aria-label="Notifications" aria-expanded="false" aria-haspopup="true" aria-controls="adm-bell-popover">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.7 21a2 2 0 0 1-3.4 0"></path>
+              </svg>
+              <span class="adm-bell-badge" id="adm-bell-badge" hidden>0</span>
+            </button>
+            <div class="adm-popover" id="adm-bell-popover" hidden></div>
+          </div>
+
+          <div class="adm-topbar-menu" id="adm-account-wrap">
+            <button type="button" class="adm-account-btn" id="adm-account-btn" data-action="toggle-account" aria-label="Menu du compte" aria-expanded="false" aria-haspopup="true" aria-controls="adm-account-menu">
+              <span class="adm-account-avatar" aria-hidden="true">AD</span>
+            </button>
+            <div class="adm-popover adm-account-menu" id="adm-account-menu" hidden>
+              <div class="adm-popover-head">
+                <strong>Administrateur</strong>
+                <span>Secrétariat — démonstration locale</span>
+              </div>
+              <button type="button" class="adm-popover-item adm-popover-row" data-action="goto-settings">
+                <span class="adm-popover-row-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4v-.2a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.6v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z"></path></svg>
+                </span>
+                <span class="adm-popover-row-main"><strong>Paramètres du compte</strong></span>
+              </button>
+              <button type="button" class="adm-popover-item adm-popover-row" data-action="goto-pin">
+                <span class="adm-popover-row-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="7.5" cy="15.5" r="4.5"></circle><path d="m11 12 9-9M15 8l3 3M18 5l3 3"></path></svg>
+                </span>
+                <span class="adm-popover-row-main"><strong>Changer le code PIN</strong></span>
+              </button>
+              <div class="adm-popover-sep" role="separator"></div>
+              <button type="button" class="adm-popover-item adm-popover-row is-danger" data-action="logout">
+                <span class="adm-popover-row-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="m16 17 5-5-5-5M21 12H9"></path></svg>
+                </span>
+                <span class="adm-popover-row-main"><strong>Se déconnecter</strong></span>
+              </button>
+            </div>
+          </div>
+
+          <button type="button" class="adm-btn adm-btn-ghost adm-btn-sm adm-logout-btn" data-action="logout">Déconnexion</button>
+        </div>
+      </header>
+
+      <main class="adm-content" id="adm-main" tabindex="-1">
+        <div class="adm-view" id="adm-view"></div>
+      </main>
+    </div>
+  </div>
+
+  <div class="adm-modal-root" id="adm-modal-root"></div>
+  <div class="adm-toasts" id="adm-toasts" role="status" aria-live="polite" aria-atomic="false"></div>
+
+  <script src="../db.js"></script>
+  <script src="../pdf.js" defer></script>
+  <script src="admin.js" defer></script>
+</body>
+</html>
